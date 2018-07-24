@@ -9,3 +9,4 @@ ryan = User.create(name: "Ryan")
 
 post1 = Journal.create(body: "body goes here ", user: ryan)
 guidedMeditation1 = GuidedMeditation.create(before: 2, after: 10, insights: "I am all", user: ryan)
+breathingExercise1 = BreathingExercise.create(round1: "30", round2: "45", round3: "120", user: ryan)

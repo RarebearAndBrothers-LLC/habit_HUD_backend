@@ -10,11 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_23_210716) do
+ActiveRecord::Schema.define(version: 2018_07_24_191534) do
+
+  create_table "breathing_exercises", force: :cascade do |t|
+    t.string "round1"
+    t.string "round2"
+    t.string "round3"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_breathing_exercises_on_user_id"
+  end
+
+  create_table "cold_showers", force: :cascade do |t|
+    t.string "time"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cold_showers_on_user_id"
+  end
 
   create_table "guided_meditations", force: :cascade do |t|
-    t.integer "before"
-    t.integer "after"
+    t.string "before"
+    t.string "after"
     t.string "insights"
     t.integer "user_id"
     t.datetime "created_at", null: false
