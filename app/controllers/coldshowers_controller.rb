@@ -31,7 +31,7 @@ class ColdshowersController < ApplicationController
   end
 
   def set_coldshower
-    @breathingexercise = ColdShower.find(params[:id])
+    @coldshower = ColdShower.find(params[:id])
   end
 
 end 

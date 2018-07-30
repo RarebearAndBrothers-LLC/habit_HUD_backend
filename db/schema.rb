@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_24_191534) do
+ActiveRecord::Schema.define(version: 2018_07_30_183415) do
 
   create_table "breathing_exercises", force: :cascade do |t|
     t.string "round1"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 2018_07_24_191534) do
     t.index ["user_id"], name: "index_cold_showers_on_user_id"
   end
 
+  create_table "goals", force: :cascade do |t|
+    t.string "body"
+    t.string "date"
+    t.string "pitfalls"
+    t.string "tactics"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
   create_table "guided_meditations", force: :cascade do |t|
     t.string "before"
     t.string "after"
@@ -46,6 +57,21 @@ ActiveRecord::Schema.define(version: 2018_07_24_191534) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_journals_on_user_id"
+  end
+
+  create_table "logins", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_logins_on_user_id"
+  end
+
+  create_table "snippets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
